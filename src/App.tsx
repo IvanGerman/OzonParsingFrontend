@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from 'react-router-dom';
 
-function App() {
+import './App.css';
+import { SearchPageContainer } from './components/SearchPage/SearchPageContainer';
+import { Navbar } from './components/Navbar/Navbar';
+import { StartPageContainer } from './components/StartPage/StartPageContainer';
+import { BalancePageContainer }  from './components/BalancePage/BalancePageContainer';
+import { DailySearchPageContainer } from './components/DailySearchPage/DailySearchPageContainer';
+import { FeedbackHandlingPageContainer } from './components/FeedbackHandlingPage/FeedbackHandlingPageContainer';
+
+export const App = (props) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+          <Route path="/" element={<StartPageContainer/>}/>
+          <Route path="searchPage/*" element={<SearchPageContainer/>}/>
+          <Route path="dailySearchPage/*" element={<DailySearchPageContainer/>}/>
+          <Route path="feedbackHandlingPage/*" element={<FeedbackHandlingPageContainer/>}/>
+          <Route path="balancePage/*" element={<BalancePageContainer/>}/>
+      </Routes>
+      <Navbar></Navbar>
     </div>
   );
 }
 
-export default App;
