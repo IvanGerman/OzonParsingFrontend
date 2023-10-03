@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-
+import './DailySearchPage.css';
 
 
 const DailySearchPage = (props) => { 
@@ -49,8 +49,10 @@ const DailySearchPage = (props) => {
   });
 
   return (
-    <div>
-      DailySearchPage
+    <div className="daily-search-page">
+      <p>DailySearchPage</p>
+      <p>Here will be a list with all the links and a button to get on push a global bonus searching over all these links </p>
+      <p>Only the best results will be shown in descending order</p>
     <form onSubmit={formik.handleSubmit}>
       <br/><br/>
       <label htmlFor="firstName">First Name</label>

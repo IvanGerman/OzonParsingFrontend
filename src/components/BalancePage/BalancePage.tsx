@@ -1,5 +1,6 @@
 import { Navigate, NavLink } from "react-router-dom";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import './BalancePage.css';
 
 const BalancePage = (props) => { console.log('props--',props);
 
@@ -25,8 +26,12 @@ const BalancePage = (props) => { console.log('props--',props);
   };
 
   return (
-    <div className="stats-page">
-      BalancePage
+    <div className="balance-page">
+      <p>BalancePage</p>
+      <p>All expenses, bonuses, overall income
+      data about expenses for bought items and received bonuses will get here from FeedbackHandlingPage,
+      incomes data will be added via input window.</p>
+      <p>Balance will look probably like a monthly result with 3 parameters(expenses in this month,bonuses in this month, incomes in this month) and overall saldo/balance</p>  
       <div></div>
       <br/>
       <button onClick={useNavigateComponent}>Navigate Component</button>

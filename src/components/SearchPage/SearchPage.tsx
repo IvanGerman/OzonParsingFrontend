@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import './SearchPage.css';
 
 
 
@@ -49,8 +50,10 @@ const SearchPage = (props) => {
   });
 
   return (
-    <div>
-      SearchPage
+    <div className="search-page">
+      <p>SearchPage</p>
+      <p>Here we send a link of special item searching results or a link to an online-store,should be 1 text input element here for that</p>
+      <p>Under this input element the result of the search will be shown in descending order of bonusValue - itemsPrice difference</p>
     <form onSubmit={formik.handleSubmit}>
       <br/><br/>
       <label htmlFor="firstName">First Name</label>

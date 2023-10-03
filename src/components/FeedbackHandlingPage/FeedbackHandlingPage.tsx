@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import './FeedbackHandlingPage.css';
 
 
 
@@ -49,8 +50,18 @@ const FeedbackHandlingPage = (props) => {
   });
 
   return (
-    <div>
-      FeedbackHandlingPage
+    <div className="feedback-handling-page">   
+      <p>FeedbackHandlingPage</p>
+      <p>Most inputs fields here, such as:</p>
+      <p>link to item(in my account)</p>
+      <p>item buy day</p>
+      <p>price/bonuses of item</p>
+      <p>supposed delivery day</p>
+      <p>when the bonuses should be booked</p>
+      <p>when i sent a feedback</p>
+      <p>Also here will be indicators like:</p>
+      <p>did i received the bonus?</p>
+      <p>list of items which will be delivered in the next 1-2 days, to not forget to send feedback</p>
     <form onSubmit={formik.handleSubmit}>
       <br/><br/>
       <label htmlFor="firstName">First Name</label>
