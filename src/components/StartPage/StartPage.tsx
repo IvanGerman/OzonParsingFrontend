@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom/client';
 import './StartPage.css';
 
 export const StartPage = (props) => { 
@@ -23,6 +24,18 @@ export const StartPage = (props) => {
     })
     .then((data) => {
       console.log(data);
+      // here we create bonusDivsWrapper content based on response data
+      // it should be created based on the state data and auto rerendered after state changes
+      const allbonusDivs = data.map((elem, index) => {
+        return ( <div  key={index}>
+          <a href={elem.linkToProduct}>{elem.productTitle}</a>
+        </div> );
+      });
+      //paste html into the bonusDivsWrapper
+      const container = document.getElementsByClassName('bonusDivsWrapper');
+      // @ts-ignore
+      const root = ReactDOM.createRoot(container);
+      root.render(allbonusDivs);
     });
   }
   return (
@@ -32,6 +45,7 @@ export const StartPage = (props) => {
       <p>{props.startPageData[0].key1}</p>
       <p>{props.startPageData[1].key2}</p>
       <button onClick = { getBonusData } >Get Data From Bonuses Page</button>
+      <div className="bonusDivsWrapper"></div>
     </div>
   )
 };
