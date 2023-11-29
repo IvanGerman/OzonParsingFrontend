@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import { StartPage } from "./StartPage";
+//import { deleteMessageThunkCreator } from "../../../redux/startPageReducer";
+
 
 
 let mapStateToProps = (state) => {
@@ -10,7 +12,10 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-  
+    getBonusDivs: async () => {
+      //const result = await dispatch(getBonusDivsThunkCreator());
+      //return result; 
+    }
   }
 };
 

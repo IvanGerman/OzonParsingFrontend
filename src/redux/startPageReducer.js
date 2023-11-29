@@ -3,8 +3,8 @@
 //const ADD_MESSAGE = 'ADD_MESSAGE';
 
 let initialState = [
-  {key1 : '111'},
-  {key2 : '222'}
+  {productTitle : 'item1', linkToProduct : 'https//xxxxx1'},
+  {productTitle : 'item2', linkToProduct : 'https//xxxxx2'}
 ]
 
 export const startPageReducer = (state = initialState) => {
