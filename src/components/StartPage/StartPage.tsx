@@ -5,6 +5,7 @@ export const StartPage = (props) => {
 
   // here we create bonusDivsWrapper content based on state data
 
+  props.getBonusDivsData
 
   const baseURL = 'http://localhost:5000/api/';
 

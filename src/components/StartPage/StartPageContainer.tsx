@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { StartPage } from "./StartPage";
+import { getBonusDivsThunkCreator } from "../../redux/startPageReducer";
 //import { deleteMessageThunkCreator } from "../../../redux/startPageReducer";
 
 
@@ -12,9 +13,9 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    getBonusDivs: async () => {
-      //const result = await dispatch(getBonusDivsThunkCreator());
-      //return result; 
+    getBonusDivsData: async () => {
+      const result = await dispatch(getBonusDivsThunkCreator());
+      return result; 
     }
   }
 };

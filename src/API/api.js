@@ -1,6 +1,32 @@
-const baseURL = 'http://localhost:3001/api/';
+const baseURL = 'http://localhost:5000/api/';
 
 
+//POST request to get bonus divs data from otzivi-pages
+export const getBonusData = async (event) => {
+  console.log('getBonusData')
+  await fetch(baseURL + 'books', {
+    method: 'POST', 
+    mode: 'cors', 
+    headers: {
+      'Content-Type': 'application/json',
+      
+    },
+    body: JSON.stringify({
+      "link": "4444444",
+      "message": "8888888"
+  }) 
+  })
+  .then((response) => { 
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    return data;
+  });
+}
+
+
+//all below are just examples to look up from
 // GET request for all messages from mongoDB
 export async function getAllMessages() { 
 
