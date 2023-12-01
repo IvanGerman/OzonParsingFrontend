@@ -1,32 +1,46 @@
-//import { v4 as uuidv4 } from 'uuid';
-
 import { getBonusData } from "../API/api";
 
-//const ADD_MESSAGE = 'ADD_MESSAGE';
+const SET_BONUSDIVS_DATA = 'SET_BONUSDIVS_DATA';
 
 let initialState = [
-  {productTitle : 'item1', linkToProduct : 'https//xxxxx1'},
-  {productTitle : 'item2', linkToProduct : 'https//xxxxx2'}
+  {linkToProduct : 'https//xxxxx1', productTitle : 'item1', productPrice : 150, bonusValue : 200, difference : 50},
+  {linkToProduct : 'https//xxxxx2', productTitle : 'item2', productPrice : 100, bonusValue : 200, difference : 100}
 ]
 
-export const startPageReducer = (state = initialState) => {
-  return state;
+export const startPageReducer = (state = initialState, action) => {
+
+  let stateCopy = [...state];
+
+  switch(action.type) {  
+
+    
+    case SET_BONUSDIVS_DATA: {
+
+      stateCopy = action.bonusDivsData;
+      return stateCopy;
+
+    }
+    
+    default: 
+      return stateCopy;
+  };
 };
 
 
 //ActionCreators---------------------------------------------------------------------------------------
 
-// export const addMessageAC = (message) => {
-//   return {
-//     type: ADD_MESSAGE,
-//     message: message
-//   }
-// };
+export const setBonusDivsDataAC = (bonusDivsData) => {
+  return {
+    type: SET_BONUSDIVS_DATA,
+    bonusDivsData
+  }
+};
 
 //ThunkCreators---------------------------------------------------------------------------------------
 
 export const getBonusDivsThunkCreator = () => {  
   return async (dispatch) => {                        
-    return await getBonusData();
+    const bonusDivsData = await getBonusData();
+    dispatch(setBonusDivsDataAC(bonusDivsData));
   };
 };

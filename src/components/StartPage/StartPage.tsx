@@ -5,29 +5,39 @@ export const StartPage = (props) => {
 
   // here we create bonusDivsWrapper content based on state data
 
-  props.getBonusDivsData
+  
 
-  const baseURL = 'http://localhost:5000/api/';
+  //const baseURL = 'http://localhost:5000/api/';
 
   const getBonusData = async (event) => {
-    console.log('getBonusData')
-    await fetch(baseURL + 'books', {
-      method: 'POST', 
-      mode: 'cors', 
-      headers: {
-        'Content-Type': 'application/json',
+    
+    const data = await props.getBonusDivsData();
+    console.log(data);
+
+  }
+
+  // const getBonusData = async (event) => {
+  //   console.log('getBonusData')
+  //   await fetch(baseURL + 'books', {
+  //     method: 'POST', 
+  //     mode: 'cors', 
+  //     headers: {
+  //       'Content-Type': 'application/json',
         
-      },
-      body: JSON.stringify({
-        "link": "4444444",
-        "message": "8888888"
-    }) 
-    })
-    .then((response) => { 
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
+  //     },
+  //     body: JSON.stringify({
+  //       "link": "4444444",
+  //       "message": "8888888"
+  //   }) 
+  //   })
+  //   .then((response) => { 
+  //     return response.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+
+
+
       // here we create bonusDivsWrapper content based on response data
       // it should be created based on the state data and auto rerendered after state changes
       // const allbonusDivs = data.map((elem, index) => {
@@ -40,8 +50,8 @@ export const StartPage = (props) => {
       // // @ts-ignore
       // const root = ReactDOM.createRoot(container);
       // root.render(allbonusDivs);
-    });
-  }
+    
+
   return (
     <div className="start-page">
       <p>StartPage</p>
