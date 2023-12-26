@@ -4,7 +4,7 @@ const baseURL = 'http://localhost:5000/api/';
 //POST request to get bonus divs data from otzivi-pages
 export const getBonusData = async (event) => {
   console.log('getBonusData')
-  await fetch(baseURL + 'books', {
+  const postRequestResult = await fetch(baseURL + 'books', {
     method: 'POST', 
     mode: 'cors', 
     headers: {
@@ -23,6 +23,8 @@ export const getBonusData = async (event) => {
     console.log(data);
     return data;
   });
+
+  return postRequestResult;
 }
 
 

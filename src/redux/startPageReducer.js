@@ -22,7 +22,7 @@ export const startPageReducer = (state = initialState, action) => {
     }
     
     default: 
-      return stateCopy;
+      return state;
   };
 };
 
@@ -41,6 +41,7 @@ export const setBonusDivsDataAC = (bonusDivsData) => {
 export const getBonusDivsThunkCreator = () => {  
   return async (dispatch) => {                        
     const bonusDivsData = await getBonusData();
+    console.log('const bonusDivsData----', bonusDivsData);
     dispatch(setBonusDivsDataAC(bonusDivsData));
   };
 };
