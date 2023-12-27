@@ -59,9 +59,19 @@ export const StartPage = (props) => {
       <button onClick = { getBonusData } >Get Data From Bonuses Page</button>
       <div className="bonusDivsWrapper">
         <p>{props.startPageData[0].productTitle}</p> 
+        <br />
+        <img src={props.startPageData[0].imageLink} alt='' className="productImage" />
+        <br />
         <a href={`https://www.${props.startPageData[0].linkToProduct}`} target="_blank">go to item!</a>
+        <br /> <br />
+        <hr />
         <p>{props.startPageData[1].productTitle}</p> 
-        <a href={`https://www.${props.startPageData[1].linkToProduct}`} target="_blank">go to item!</a> 
+        <br />
+        <img src={props.startPageData[1].imageLink} alt='' className="productImage" />
+        <br />
+        <a href={`https://www.${props.startPageData[1].linkToProduct}`} target="_blank">go to item!</a>
+        <br /> <br />
+        <hr /> 
       </div>
     </div>
   )
