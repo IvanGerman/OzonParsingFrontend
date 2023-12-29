@@ -1,3 +1,9 @@
 .productImage {
   width: 10vw;
 }
+
+.difference {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
+}

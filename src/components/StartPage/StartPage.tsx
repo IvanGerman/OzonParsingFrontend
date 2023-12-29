@@ -24,7 +24,7 @@ export const StartPage = (props) => {
       // const root = ReactDOM.createRoot(container);
       // root.render(allbonusDivs);
       let allBonusItems = props.startPageData.map((elem, index) => {
-        return ( <SingleItem productTitle={elem.productTitle} imageLink={elem.imageLink} linkToProduct={elem.linkToProduct} key={index}></SingleItem> );
+        return ( <SingleItem productTitle={elem.productTitle} imageLink={elem.imageLink} linkToProduct={elem.linkToProduct} bonusValue={elem.bonusValue} productPrice={elem.productPrice} difference={elem.difference} key={index}></SingleItem> );
       });
 
   return (
@@ -34,20 +34,6 @@ export const StartPage = (props) => {
       <button onClick = { getBonusData } >Get Data From Bonuses Page</button>
       <div className="bonusDivsWrapper">
         {allBonusItems}
-        {/* <p>{props.startPageData[0].productTitle}</p> 
-        <br />
-        <img src={props.startPageData[0].imageLink} alt='' className="productImage" />
-        <br />
-        <a href={`https://www.${props.startPageData[0].linkToProduct}`} target="_blank">go to item!</a>
-        <br /> <br />
-        <hr />
-        <p>{props.startPageData[1].productTitle}</p> 
-        <br />
-        <img src={props.startPageData[1].imageLink} alt='' className="productImage" />
-        <br />
-        <a href={`https://www.${props.startPageData[1].linkToProduct}`} target="_blank">go to item!</a>
-        <br /> <br />
-        <hr />  */}
       </div>
     </div>
   )
